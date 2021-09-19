@@ -1,12 +1,14 @@
 import './scss/index.scss';
-
-console.log('ddd');
-
-
-async function ass() {
-  return await Promise.resolve('async workingdd!!!');
-}
+import {Excel} from './components/excel/Excel';
+import {Header} from './components/header/Header';
+import {Toolbar} from './components/toolbar/Toolbar';
+import {Table} from './components/table/Table';
+import {Formula} from './components/formula/Formula';
 
 
-console.log('666333111');
-ass().then(console.log);
+const excel = new Excel('#app', {
+  components: [Header, Toolbar, Formula, Table],
+});
+
+excel.render();
+
